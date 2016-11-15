@@ -8,23 +8,27 @@ namespace GeneticAlgorithmLab
 {
     class Program
     {
-        public static string code = "BAB";
+        public static string code = "ADCBAAAD";
         static Random rnd = new Random();
-        static char[] alphabet = { 'A', 'B' };
+        static char[] alphabet = { 'A', 'B', 'C','D' };
 
         static void Main(string[] args)
         {
             List<string> population = new List<string>();
-            population.Add("AAA");
-            population.Add("BBB");
+            population.Add("AAAAAAAA");
+            population.Add("BBBBBBBB");
+            population.Add("DDDDDDDD");
+            population.Add("CCCCCCCC");
             Console.WriteLine(Genetic(population));
             Console.Read();
         }
 
         static string Genetic(List<string> population)  //pg 129 in book
         {
+            int generation = 0;
             while (true)
             {
+                Console.WriteLine("Generation: {0}", generation++);
                 List<string> newPopulation = new List<string>();
                 foreach (string s in population)
                 {
